@@ -1,0 +1,2 @@
+C:\focp_lab2\Project2\Debug\Project2.exe
+C:\focp_lab2\Project2\Debug\Project2.pdb
