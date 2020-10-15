@@ -34,16 +34,38 @@ int pow(int base, int power) {
 	return res;
 }
 
+int fibonacci_iter(int index) {
+	int a = 0;
+	int b = 1;
 
+	if (index == 0 || index==1) {
+		return index;
+	}
+	else {
+		for (int i = 2; i < index; i++) {
+
+			int temp = a + b;
+			a = b;
+			b = temp;
+		}
+		return b;
+	}
+}
 
 int main() {
 
+	int index = read_int();
+	int res = fibonacci_iter(index);
+	cout << "result is:" << res << endl;
+
+
+	/*
 	int base = read_int();
 	int power = read_int();
 	int result = pow(base, power);
 
 	cout << "result is:" << result << endl;
-
+	*/
 
 	/*
 	int number = read_int();
