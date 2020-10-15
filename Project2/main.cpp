@@ -52,12 +52,28 @@ int fibonacci_iter(int index) {
 	}
 }
 
+int fibonacci_rec(int index) {
+	if (index < 2) {
+		return index;
+	}
+
+	return fibonacci_rec(index - 2) + fibonacci_rec(index - 1);
+}
+
 int main() {
 
+
+	int index = read_int();
+	int res = fibonacci_rec(index-1);
+	cout << "result is:" << res << endl;
+
+
+
+	/*
 	int index = read_int();
 	int res = fibonacci_iter(index);
 	cout << "result is:" << res << endl;
-
+	*/
 
 	/*
 	int base = read_int();
