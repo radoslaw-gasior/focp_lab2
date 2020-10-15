@@ -1,2 +1,3 @@
 ﻿  main.cpp
+C:\focp_lab2\Project2\main.cpp(111,13): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
   Project2.vcxproj -> C:\focp_lab2\Project2\Debug\Project2.exe

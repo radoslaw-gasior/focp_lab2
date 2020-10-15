@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include<vector>
 
 using namespace std;
 
@@ -64,6 +65,53 @@ int fibonacci_rec(int index) {
 
 int main() {
 
+	cout << "How many numbers?" << endl;
+
+	int numbers = read_int();
+
+	vector<int> values;
+
+	for (int i=0; i < numbers; i++) {
+		int  temp = read_int();
+		values.push_back(temp);
+	}
+
+	ofstream file;
+	file.open("values.txt");	//file.open("values.txt", ios_base::app); for adding to file
+
+	for (int i = 0; i < numbers; i++) {
+		file << values[i]<<"\n";
+	}
+
+	file.close();
+
+	vector<int>read_values;
+
+	ifstream newfile("values.txt");
+
+	if (newfile.is_open()) {
+
+		string line;
+
+		while (getline(newfile, line)) {
+			read_values.push_back(stoi(line));	//converting string to int
+		}
+		newfile.close();
+	}
+	else {
+		cout << "There was a problem" << endl;
+	}
+
+	float sum = 0;
+
+	for (int i = 0; i < numbers; i++) {
+		sum += read_values[i];
+	}
+
+	float mean = sum / numbers;
+	cout << "mean=" << mean << endl;
+
+	/*
 	ofstream file;
 	file.open("file.txt");
 	
@@ -89,6 +137,7 @@ int main() {
 	else {
 		cout << "There was a problem" << endl;
 	}
+*/
 
 	/*
 	int index = read_int();
