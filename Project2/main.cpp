@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -62,11 +64,37 @@ int fibonacci_rec(int index) {
 
 int main() {
 
+	ofstream file;
+	file.open("file.txt");
+	
+	file << "Hope it works\n";
+	file << "Hope it works\n";
+	file << "Hope it works\n";
 
+	file.close();
+
+
+
+	ifstream newfile("file.txt");
+
+	if (newfile.is_open()) {
+		//read
+
+		string line;
+		while (getline(newfile, line)) {
+			cout << line << endl;
+		}
+		newfile.close();
+	}
+	else {
+		cout << "There was a problem" << endl;
+	}
+
+	/*
 	int index = read_int();
 	int res = fibonacci_rec(index-1);
 	cout << "result is:" << res << endl;
-
+	*/
 
 
 	/*
